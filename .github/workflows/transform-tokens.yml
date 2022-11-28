@@ -18,7 +18,7 @@ jobs:
         run: 'mkdir -p _tokens'
       - name: create json from request body
         id: create-json
-        uses: jsdaniell/create-json@1.1.2
+        uses: jsdaniell/create-json@1.2.1
         with:
           # it uses the figma filename that was send as then filename parameter
           name: 'tokens'
