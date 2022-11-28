@@ -15,7 +15,7 @@ const getStyleDictionaryBaseConfig = () => {
         platforms: {
             css: {
                 transformGroup: "custom/css",
-                buildPath: "src/styles/compiled/",
+                buildPath: "projects/components/style/tokens/",
                 files: [
                     {
                         destination: 'global.tokens.css',
