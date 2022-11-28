@@ -1,0 +1,13 @@
+{
+  "name": "design-tokens",
+  "version": "1.0.0",
+  "description": "Base repo to transform json design tokens from the figma design token plugin via amazon style directory",
+  "scripts": {
+    "tokens:prepare": "node prepare-tokens.js",
+    "tokens:build": "node build-tokens.js"
+  },
+  "dependencies": {
+    "minimist": "^1.2.7",
+    "style-dictionary": "^3.7.1"
+  }
+}
