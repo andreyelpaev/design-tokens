@@ -1,5 +1,5 @@
 const {existsSync, mkdirSync, writeFileSync, rmSync} = require('fs');
-const tokensJson = require("./tokens.json");
+const tokensJson = require(`${__dirname}/tokens.json`);
 const baseDir = `${__dirname}/tokens`;
 
 if (existsSync(baseDir)) {
