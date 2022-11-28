@@ -1,5 +1,5 @@
 const StyleDictionary = require("style-dictionary");
-const tokensJson = require(`${__dirname}/_tokens/tokens.json`);
+const tokensJson = require(`./tokens.json`);
 
 // Look for args passed on the command line
 const args = require("minimist")(process.argv.slice(2));
