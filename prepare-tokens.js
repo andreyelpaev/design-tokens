@@ -2,9 +2,12 @@ const {existsSync, mkdirSync, writeFileSync, rmSync, readdirSync} = require('fs'
 const tokensJson = require(__dirname + '/figma-tokens/tokens.json');
 const baseDir = `./tokens`;
 
-rmSync(`${baseDir}`, {recursive: true});
-mkdirSync(baseDir)
-
+if (existsSync(baseDir)) {
+    rmSync(`${baseDir}`, {recursive: true});
+    mkdirSync(baseDir)
+} else {
+    mkdirSync(baseDir)
+}
 
 const themes = Object.keys(tokensJson.color);
 
