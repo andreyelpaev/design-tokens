@@ -5,13 +5,11 @@ const tokensJson = require(__dirname + '/figma-tokens/tokens.json');
 const args = require("minimist")(process.argv.slice(2));
 const themes = args.theme ? args.theme.split(',') : ["baselight", "basedark"];
 
-console.log('args', args);
-
 const getStyleDictionaryBaseConfig = () => {
     return {
         log: "warn",
         source: [
-            `./tokens/*.json`,
+            `./tokens/global.json`,
         ],
         platforms: {
             css: {
@@ -142,7 +140,7 @@ const utilities = [
 
 StyleDictionary.registerFilter({
     name: 'utilityToken',
-    matcher: function(token) {
+    matcher: function (token) {
         return token.type === 'color'
     }
 })
@@ -150,17 +148,17 @@ StyleDictionary.registerFilter({
 
 StyleDictionary.registerFormat({
     name: 'utility',
-    formatter: function(dictionary, platform) {
+    formatter: function (dictionary, platform) {
         let output = '';
-        dictionary.allProperties.forEach(function(prop) {
+        dictionary.allProperties.forEach(function (prop) {
 
-            if(prop.path.indexOf('chart') > 0) {
+            if (prop.path.indexOf('chart') > 0) {
                 return;
             }
 
             const tokenType = prop.path.slice(0, 1)[0];
 
-            utilities.forEach(function(utility) {
+            utilities.forEach(function (utility) {
                 if (tokenType === utility.tokenType) {
                     var utilityClass = utility.name + '-' + prop.path[1] + '-' + prop.path[2];
                     output += `.${utilityClass} {
@@ -177,24 +175,26 @@ StyleDictionary.registerFormat({
 // APPLY THE CONFIGURATION
 // IMPORTANT: the registration of custom transforms
 // needs to be done _before_ applying the configuration
+const StyleDictionaryBase = StyleDictionary.extend(getStyleDictionaryBaseConfig())
+StyleDictionaryBase.buildAllPlatforms();
 
-for(const theme of themes) {
+for (const theme of themes) {
 
     console.log(`🚧 Compiling tokens with the ${theme} theme`);
 
-    const StyleDictionaryBase = StyleDictionary.extend(getStyleDictionaryBaseConfig())
     const StyleDictionaryTheming = StyleDictionary.extend(
         getStyleDictionaryThemeConfig(theme)
     );
 
+    const utilityColors = {
+        color: {
+            ...tokensJson.color[theme]
+        }
+    };
 
     const StyleDictionaryUtility = StyleDictionary.extend({
         log: "warn",
-        properties: {
-            color: {
-                ...tokensJson.color[theme]
-            }
-        },
+        properties: utilityColors,
         platforms: {
             css: {
                 transformGroup: "css",
@@ -207,15 +207,16 @@ for(const theme of themes) {
                 ],
             },
         },
-    })
+    });
 
 
     // BUILD ALL THE PLATFORMS
-    StyleDictionaryBase.buildAllPlatforms();
+
+    if (Object.keys(utilityColors.color)?.length > 1) {
+        StyleDictionaryUtility.buildAllPlatforms();
+    }
+
     StyleDictionaryTheming.buildAllPlatforms();
-    StyleDictionaryUtility.buildAllPlatforms();
-
-
 }
 
 
