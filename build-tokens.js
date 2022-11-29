@@ -5,7 +5,7 @@ const tokensJson = require(__dirname + '/figma-tokens/tokens.json');
 const args = require("minimist")(process.argv.slice(2));
 const themes = args.theme ? args.theme.split(',') : ["baselight", "basedark"];
 
-console.log('args', themes);
+console.log('args', args);
 
 const getStyleDictionaryBaseConfig = () => {
     return {
