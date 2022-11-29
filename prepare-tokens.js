@@ -1,10 +1,6 @@
 const {existsSync, mkdirSync, writeFileSync, rmSync, readdirSync} = require('fs');
-
-readdirSync(__dirname + '/figma-tokens').forEach(file => {
-    console.log(file);
-});
-const tokensJson = require(`./tokens.json`);
-const baseDir = `${__dirname}/tokens`;
+const tokensJson = require(__dirname + '/figma-tokens/tokens.json');
+const baseDir = `./tokens`;
 
 if (existsSync(baseDir)) {
     rmSync(`${baseDir}`, {recursive: true});
@@ -21,7 +17,7 @@ for (const theme of themes) {
     }, null, 2));
 
     if (tokensJson.typography && tokensJson.spacing && tokensJson.radius) {
-        writeFileSync(`${__dirname}/tokens/global.json`, JSON.stringify({
+        writeFileSync('./tokens/global.json', JSON.stringify({
             font: tokensJson.typography, spacing: tokensJson.spacing, radius: tokensJson.radius
         }, null, 2))
     }

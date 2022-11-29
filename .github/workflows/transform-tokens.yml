@@ -20,7 +20,7 @@ jobs:
         uses: jsdaniell/create-json@v1.2.1
         with:
           # it uses the figma filename that was send as then filename parameter
-          name: 'tokens'
+          name: 'tokens.json'
           # it uses the json string that was send as the tokens parameter
           json: ${{ github.event.client_payload.tokens }}
           dir: 'figma-tokens'
