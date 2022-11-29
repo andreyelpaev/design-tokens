@@ -98,9 +98,9 @@ StyleDictionary.registerTransform({
     },
     transformer: token => {
         const {
-            top
+            right
         } = token.original.value;
-        return `${top}px`
+        return `${right}px`
     }
 });
 
