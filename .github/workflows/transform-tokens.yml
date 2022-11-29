@@ -14,7 +14,7 @@ jobs:
       # this lets us work in the actual repository
       - uses: actions/checkout@v3
       - name: mkdir "tokens" directory
-        run: 'mkdir -p _tokens'
+        run: 'mkdir -p figma-tokens'
       - name: create json from request body
         id: create-json
         uses: jsdaniell/create-json@v1.2.1
@@ -23,7 +23,7 @@ jobs:
           name: 'tokens'
           # it uses the json string that was send as the tokens parameter
           json: ${{ github.event.client_payload.tokens }}
-          dir: '_tokens'
+          dir: 'figma-tokens'
       # we now initialize node to run amazon style dictionary to compile the tokens
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1

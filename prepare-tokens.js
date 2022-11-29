@@ -1,17 +1,8 @@
 const {existsSync, mkdirSync, writeFileSync, rmSync, readdirSync} = require('fs');
 
-readdirSync(__dirname).forEach(file => {
+readdirSync(__dirname + '/figma-tokens').forEach(file => {
     console.log(file);
 });
-readdirSync('/').forEach(file => {
-    console.log(file);
-});
-
-
-readdirSync('.').forEach(file => {
-    console.log(file);
-});
-
 const tokensJson = require(`./tokens.json`);
 const baseDir = `${__dirname}/tokens`;
 
