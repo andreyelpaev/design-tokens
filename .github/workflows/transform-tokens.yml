@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependencies & Prepare to Build
         run: 'npm i && npm run tokens:prepare'
       - name: Build Tokens
-        run: 'npm run tokens:build --theme baselight,basedark,purpledark,purplelight'
+        run: 'npm run tokens:build -- --theme baselight,basedark,purpledark,purplelight'
       # We now create a pull request
       - name: Create PR
         uses: peter-evans/create-pull-request@v3
