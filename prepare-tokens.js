@@ -20,7 +20,7 @@ for (const theme of themes) {
     }, null, 2));
 
     if (tokensJson.typography && tokensJson.spacing && tokensJson.radius) {
-        writeFileSync(`${dir}/global.json`, JSON.stringify({
+        writeFileSync(`${baseDir}/global.json`, JSON.stringify({
             font: tokensJson.typography, spacing: tokensJson.spacing, radius: tokensJson.radius
         }, null, 2))
     }
