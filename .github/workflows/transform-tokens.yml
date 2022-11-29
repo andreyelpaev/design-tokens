@@ -38,8 +38,8 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: "Tokens updated"
-          title: "Design tokens updated"
+          commit-message: "fix: design tokens updated"
+          title: "🪁 Design tokens updated"
           body: "Design tokens have been updated via Figma and need to be reviewed."
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
