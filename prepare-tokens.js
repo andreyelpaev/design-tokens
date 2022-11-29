@@ -1,4 +1,4 @@
-const {existsSync, mkdirSync, writeFileSync, rmSync, readdirSync} = require('fs');
+const {existsSync, mkdirSync, writeFileSync} = require('fs');
 const tokensJson = require(__dirname + '/figma-tokens/tokens.json');
 const baseDir = `./tokens`;
 
