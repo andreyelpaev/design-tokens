@@ -69,4 +69,9 @@ html[data-theme='basedark'] {
   --color-chart-mustard: #d8b655;
   --color-chart-orange: #f6b520;
   --color-chart-light-green: #46d39a;
+  --shadow-1: 0px 1px 0px 0px #0b0b0cff;
+  --shadow-2: 0px 14px 18px 0px #0000004d;
+  --shadow-3: 0px 8px 16px 0px #00000066;
+  --shadow-4: 0px 12px 24px 0px #00000066;
+  --shadow-5: 0px 16px 32px 0px #00000066;
     }
