@@ -854,5 +854,97 @@
         }
       }
     }
+  },
+  "shadow": {
+    "1": {
+      "description": null,
+      "type": "custom-shadow",
+      "value": {
+        "shadowType": "dropShadow",
+        "radius": 0,
+        "color": "#0b0b0cff",
+        "offsetX": 0,
+        "offsetY": 1,
+        "spread": 0
+      },
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:08da4435aa76d8f4f7f443493f86d41871002f8c,",
+          "exportKey": "effect"
+        }
+      }
+    },
+    "2": {
+      "description": null,
+      "type": "custom-shadow",
+      "value": {
+        "shadowType": "dropShadow",
+        "radius": 18,
+        "color": "#0000004d",
+        "offsetX": 0,
+        "offsetY": 14,
+        "spread": 0
+      },
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:7a4da5ac0e97747b0fdfdfb5c65be91e4dfc36a6,",
+          "exportKey": "effect"
+        }
+      }
+    },
+    "3": {
+      "description": null,
+      "type": "custom-shadow",
+      "value": {
+        "shadowType": "dropShadow",
+        "radius": 16,
+        "color": "#00000066",
+        "offsetX": 0,
+        "offsetY": 8,
+        "spread": 0
+      },
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:f2077a4664defe2ea3f9959172f80ffedca2d063,",
+          "exportKey": "effect"
+        }
+      }
+    },
+    "4": {
+      "description": "4",
+      "type": "custom-shadow",
+      "value": {
+        "shadowType": "dropShadow",
+        "radius": 24,
+        "color": "#00000066",
+        "offsetX": 0,
+        "offsetY": 12,
+        "spread": 0
+      },
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:c7d6b07bdbc08db333984607e85ada4f2ecf35ab,",
+          "exportKey": "effect"
+        }
+      }
+    },
+    "5": {
+      "description": null,
+      "type": "custom-shadow",
+      "value": {
+        "shadowType": "dropShadow",
+        "radius": 32,
+        "color": "#00000066",
+        "offsetX": 0,
+        "offsetY": 16,
+        "spread": 0
+      },
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:51dd381ff09f10721ed645b1dd492bd3baab986f,",
+          "exportKey": "effect"
+        }
+      }
+    }
   }
 }
