@@ -1,11 +1,9 @@
 const StyleDictionary = require("style-dictionary");
-const tokensJson = require(`./tokens.json`);
+const tokensJson = require(`./tokens/tokens.json`);
 
 // Look for args passed on the command line
 const args = require("minimist")(process.argv.slice(2));
 const themes = args.theme ? args.theme.split(',') : ["baselight", "basedark"];
-
-
 const getStyleDictionaryBaseConfig = () => {
     return {
         log: "warn",
