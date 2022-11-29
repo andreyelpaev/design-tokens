@@ -1,6 +1,14 @@
-const {existsSync, mkdirSync, writeFileSync, rmSync} = require('fs');
+const {existsSync, mkdirSync, writeFileSync, rmSync, readdirSync} = require('fs');
+
+readdirSync('.').forEach(file => {
+    console.log(file);
+});
+
 const tokensJson = require(`./tokens.json`);
 const baseDir = `${__dirname}/tokens`;
+
+
+
 
 if (existsSync(baseDir)) {
     rmSync(`${baseDir}`, {recursive: true});
